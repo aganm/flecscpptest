@@ -1,8 +1,8 @@
-To run:
+# To run:
 
-chmod +x build.sh
-./build.sh
+$ chmod +x build.sh  
+$ ./build.sh
 
-OR
+# or
 
-g++ -I. main.cpp flecs.cpp
+$ g++ -I. main.cpp flecs.cpp
