@@ -1,0 +1,1757 @@
+flecs.c: In function ‘void ecs_log_print(int, const char*, int32_t, const char*, __va_list_tag*)’:
+flecs.c:1445:29: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+ 1445 |     char *file_ptr = strrchr(file, '/');
+      |                      ~~~~~~~^~~~~~~~~~~
+      |                             |
+      |                             const char*
+flecs.c:1451:23: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+ 1451 |     file_ptr = strrchr(file, '.');
+      |                ~~~~~~~^~~~~~~~~~~
+      |                       |
+      |                       const char*
+In file included from flecs.c:2:
+flecs.c: In function ‘ecs_data_t* ecs_init_data(ecs_world_t*, ecs_table_t*, ecs_data_t*)’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_column_t*’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:1727:27: note: in expansion of macro ‘ecs_os_calloc’
+ 1727 |         result->columns = ecs_os_calloc(ECS_SIZEOF(ecs_column_t) * count);
+      |                           ^~~~~~~~~~~~~
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_column_t*’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:1733:27: note: in expansion of macro ‘ecs_os_calloc’
+ 1733 |         result->columns = ecs_os_calloc(ECS_SIZEOF(ecs_column_t) * type_count);
+      |                           ^~~~~~~~~~~~~
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_sw_column_t*’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:1759:30: note: in expansion of macro ‘ecs_os_calloc’
+ 1759 |         result->sw_columns = ecs_os_calloc(ECS_SIZEOF(ecs_sw_column_t) * sw_count);
+      |                              ^~~~~~~~~~~~~
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_bs_column_t*’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:1787:30: note: in expansion of macro ‘ecs_os_calloc’
+ 1787 |         result->bs_columns = ecs_os_calloc(ECS_SIZEOF(ecs_bs_column_t) * bs_count);
+      |                              ^~~~~~~~~~~~~
+flecs.c: In function ‘void notify_component_info(ecs_world_t*, ecs_table_t*, ecs_entity_t)’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_c_info_t**’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:1859:29: note: in expansion of macro ‘ecs_os_calloc’
+ 1859 |             table->c_info = ecs_os_calloc(
+      |                             ^~~~~~~~~~~~~
+flecs.c: In function ‘int compare_matched_query(const void*, const void*)’:
+flecs.c:1904:37: error: invalid conversion from ‘const void*’ to ‘const ecs_matched_query_t*’ [-fpermissive]
+ 1904 |     const ecs_matched_query_t *m1 = ptr1;
+      |                                     ^~~~
+      |                                     |
+      |                                     const void*
+flecs.c:1905:37: error: invalid conversion from ‘const void*’ to ‘const ecs_matched_query_t*’ [-fpermissive]
+ 1905 |     const ecs_matched_query_t *m2 = ptr2;
+      |                                     ^~~~
+      |                                     |
+      |                                     const void*
+In file included from flecs.c:2:
+flecs.c: In function ‘void register_on_set(ecs_world_t*, ecs_table_t*, ecs_query_t*, int32_t)’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_vector_t**’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:2014:17: note: in expansion of macro ‘ecs_os_calloc’
+ 2014 |                 ecs_os_calloc(ECS_SIZEOF(ecs_vector_t) * table->column_count);
+      |                 ^~~~~~~~~~~~~
+flecs.c: In function ‘void ecs_table_activate(ecs_world_t*, ecs_table_t*, ecs_query_t*, bool)’:
+flecs.c:2094:61: error: taking address of rvalue [-fpermissive]
+ 2094 |         ecs_query_notify(world, query, &(ecs_query_event_t) {
+      |                                                             ^
+ 2095 |             .kind = activate ? EcsQueryTableNonEmpty : EcsQueryTableEmpty,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2096 |             .table = table
+      |             ~~~~~~~~~~~~~~                                   
+ 2097 |         });
+      |         ~                                                    
+flecs.c:2104:69: error: taking address of rvalue [-fpermissive]
+ 2104 |             ecs_query_notify(world, buffer[i], &(ecs_query_event_t) {
+      |                                                                     ^
+ 2105 |                 .kind = activate ? EcsQueryTableNonEmpty : EcsQueryTableEmpty,
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2106 |                 .table = table
+      |                 ~~~~~~~~~~~~~~                                       
+ 2107 |             });
+      |             ~                                                        
+In file included from flecs.c:2:
+flecs.c: In function ‘ecs_data_t* ecs_table_get_or_create_data(ecs_table_t*)’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_data_t*’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:2202:30: note: in expansion of macro ‘ecs_os_calloc’
+ 2202 |         data = table->data = ecs_os_calloc(ECS_SIZEOF(ecs_data_t));
+      |                              ^~~~~~~~~~~~~
+flecs.c: In function ‘int32_t* ecs_table_get_dirty_state(ecs_table_t*)’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘int32_t*’ {aka ‘int*’} [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:3819:30: note: in expansion of macro ‘ecs_os_calloc’
+ 3819 |         table->dirty_state = ecs_os_calloc(ECS_SIZEOF(int32_t) * (table->column_count + 1));
+      |                              ^~~~~~~~~~~~~
+flecs.c: In function ‘int32_t* ecs_table_get_monitor(ecs_table_t*)’:
+flecs.c:3832:25: error: invalid conversion from ‘void*’ to ‘int32_t*’ {aka ‘int*’} [-fpermissive]
+ 3832 |     return ecs_os_memdup(dirty_state, (column_count + 1) * ECS_SIZEOF(int32_t));
+      |            ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                         |
+      |                         void*
+flecs.c: In function ‘void run_component_trigger_for_entities(ecs_world_t*, ecs_vector_t*, ecs_entity_t, ecs_table_t*, ecs_data_t*, int32_t, int32_t, ecs_entity_t*)’:
+flecs.c:4097:9: error: designator order for field ‘ecs_iter_table_t::columns’ does not match declaration order in ‘ecs_iter_table_t’
+ 4097 |         };
+      |         ^
+In file included from flecs.c:2:
+flecs.c: In function ‘void ecs_run_component_trigger(ecs_world_t*, ecs_vector_t*, ecs_entity_t, ecs_table_t*, ecs_data_t*, int32_t, int32_t)’:
+flecs.h:2816:31: error: invalid conversion from ‘void*’ to ‘ecs_entity_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2816 | #define ECS_OFFSET(o, offset) reinterpret_cast<void*>((reinterpret_cast<uintptr_t>(o)) + (static_cast<uintptr_t>(offset)))
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                               |
+      |                               void*
+flecs.c:4140:16: note: in expansion of macro ‘ECS_OFFSET’
+ 4140 |     entities = ECS_OFFSET(entities, ECS_SIZEOF(ecs_entity_t) * row);
+      |                ^~~~~~~~~~
+flecs.c: In function ‘void ecs_run_set_systems(ecs_world_t*, ecs_entities_t*, ecs_table_t*, ecs_data_t*, int32_t, int32_t, bool)’:
+flecs.h:2816:31: error: invalid conversion from ‘void*’ to ‘ecs_entity_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2816 | #define ECS_OFFSET(o, offset) reinterpret_cast<void*>((reinterpret_cast<uintptr_t>(o)) + (static_cast<uintptr_t>(offset)))
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                               |
+      |                               void*
+flecs.c:4222:16: note: in expansion of macro ‘ECS_OFFSET’
+ 4222 |     entities = ECS_OFFSET(entities, ECS_SIZEOF(ecs_entity_t) * row);
+      |                ^~~~~~~~~~
+In file included from /usr/include/stdlib.h:568,
+                 from /usr/include/c++/10/cstdlib:75,
+                 from /usr/include/c++/10/stdlib.h:36,
+                 from flecs.h:68,
+                 from flecs.c:2:
+flecs.c: In function ‘void instantiate_children(ecs_world_t*, ecs_entity_t, ecs_table_t*, ecs_data_t*, int32_t, int32_t, ecs_table_t*)’:
+flecs.h:2058:29: error: invalid conversion from ‘void*’ to ‘ecs_entity_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2058 | #define ecs_os_alloca(size) alloca((size_t)(size))
+      |                             ^~~~~~
+      |                             |
+      |                             void*
+flecs.c:4344:18: note: in expansion of macro ‘ecs_os_alloca’
+ 4344 |         .array = ecs_os_alloca(ECS_SIZEOF(ecs_entity_t) * type_count + 1)
+      |                  ^~~~~~~~~~~~~
+flecs.h:2058:29: error: invalid conversion from ‘void*’ to ‘void**’ [-fpermissive]
+ 2058 | #define ecs_os_alloca(size) alloca((size_t)(size))
+      |                             ^~~~~~
+      |                             |
+      |                             void*
+flecs.c:4347:21: note: in expansion of macro ‘ecs_os_alloca’
+ 4347 |     void **c_info = ecs_os_alloca(ECS_SIZEOF(void*) * column_count);
+      |                     ^~~~~~~~~~~~~
+In file included from flecs.c:2:
+flecs.c: In function ‘void commit(ecs_world_t*, ecs_entity_t, ecs_entity_info_t*, ecs_table_t*, ecs_entities_t*, ecs_entities_t*)’:
+flecs.c:5048:55: error: taking address of rvalue [-fpermissive]
+ 5048 |             ecs_eis_set(world, entity, &(ecs_record_t){
+      |                                                       ^
+ 5049 |                 NULL, (info->is_watched == true) * -1
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+ 5050 |             });
+      |             ~                                          
+flecs.h:1120:58: note: in definition of macro ‘ecs_sparse_set’
+ 1120 |     ((type*)_ecs_sparse_set(sparse, sizeof(type), index, value))
+      |                                                          ^~~~~
+flecs.c:5048:13: note: in expansion of macro ‘ecs_eis_set’
+ 5048 |             ecs_eis_set(world, entity, &(ecs_record_t){
+      |             ^~~~~~~~~~~
+flecs.c: At global scope:
+flecs.c:5101:6: error: expected unqualified-id before ‘new’
+ 5101 | void new(
+      |      ^~~
+In file included from flecs.c:2:
+flecs.c: In function ‘const ecs_entity_t* new_w_data(ecs_world_t*, ecs_table_t*, ecs_entities_t*, int32_t, void**, int32_t*)’:
+flecs.c:5150:24: error: taking address of rvalue [-fpermissive]
+ 5150 |         &(ecs_record_t){
+      |                        ^
+ 5151 |             .table = table,
+      |             ~~~~~~~~~~~~~~~
+ 5152 |             .row = row + i + 1
+      |             ~~~~~~~~~~~~~~~~~~
+ 5153 |         });
+      |         ~               
+flecs.h:1120:58: note: in definition of macro ‘ecs_sparse_set’
+ 1120 |     ((type*)_ecs_sparse_set(sparse, sizeof(type), index, value))
+      |                                                          ^~~~~
+flecs.c:5149:32: note: in expansion of macro ‘ecs_eis_set’
+ 5149 |         record_ptrs[row + i] = ecs_eis_set(world, ids[i],
+      |                                ^~~~~~~~~~~
+flecs.c: In function ‘void ecs_set_watch(ecs_world_t*, ecs_entity_t)’:
+flecs.c:5446:60: error: designator order for field ‘ecs_record_t::table’ does not match declaration order in ‘ecs_record_t’
+ 5446 |         ecs_record_t new_record = {.row = -1, .table = NULL};
+      |                                                            ^
+flecs.c: In function ‘ecs_entity_t ecs_new_w_type(ecs_world_t*, ecs_type_t)’:
+flecs.c:5577:36: error: expected type-specifier before ‘;’ token
+ 5577 |         new(world, entity, &to_add);
+      |                                    ^
+In file included from flecs.c:2:
+flecs.c:5580:51: error: taking address of rvalue [-fpermissive]
+ 5580 |         ecs_eis_set(world, entity, &(ecs_record_t){ 0 });
+      |                                                   ^~~~~
+flecs.h:1120:58: note: in definition of macro ‘ecs_sparse_set’
+ 1120 |     ((type*)_ecs_sparse_set(sparse, sizeof(type), index, value))
+      |                                                          ^~~~~
+flecs.c:5580:9: note: in expansion of macro ‘ecs_eis_set’
+ 5580 |         ecs_eis_set(world, entity, &(ecs_record_t){ 0 });
+      |         ^~~~~~~~~~~
+flecs.c: In function ‘ecs_entity_t ecs_new_w_id(ecs_world_t*, ecs_id_t)’:
+flecs.c:5610:36: error: expected type-specifier before ‘;’ token
+ 5610 |         new(world, entity, &to_add);
+      |                                    ^
+In file included from flecs.c:2:
+flecs.c:5618:51: error: taking address of rvalue [-fpermissive]
+ 5618 |         ecs_eis_set(world, entity, &(ecs_record_t){ 0 });
+      |                                                   ^~~~~
+flecs.h:1120:58: note: in definition of macro ‘ecs_sparse_set’
+ 1120 |     ((type*)_ecs_sparse_set(sparse, sizeof(type), index, value))
+      |                                                          ^~~~~
+flecs.c:5618:9: note: in expansion of macro ‘ecs_eis_set’
+ 5618 |         ecs_eis_set(world, entity, &(ecs_record_t){ 0 });
+      |         ^~~~~~~~~~~
+flecs.c: In function ‘const ecs_entity_t* ecs_bulk_new_w_data(ecs_world_t*, int32_t, const ecs_entities_t*, void*)’:
+flecs.c:5634:61: error: invalid conversion from ‘void*’ to ‘void**’ [-fpermissive]
+ 5634 |     if (ecs_defer_bulk_new(world, stage, count, components, data, &ids)) {
+      |                                                             ^~~~
+      |                                                             |
+      |                                                             void*
+flecs.c:794:12: note:   initializing argument 5 of ‘bool ecs_defer_bulk_new(ecs_world_t*, ecs_stage_t*, int32_t, const ecs_entities_t*, void**, const ecs_entity_t**)’
+  794 |     void **component_data,
+      |     ~~~~~~~^~~~~~~~~~~~~~
+flecs.c:5639:49: error: invalid conversion from ‘void*’ to ‘void**’ [-fpermissive]
+ 5639 |     ids = new_w_data(world, table, NULL, count, data, NULL);
+      |                                                 ^~~~
+      |                                                 |
+      |                                                 void*
+flecs.c:5118:13: note:   initializing argument 5 of ‘const ecs_entity_t* new_w_data(ecs_world_t*, ecs_table_t*, ecs_entities_t*, int32_t, void**, int32_t*)’
+ 5118 |     void ** component_data,
+      |     ~~~~~~~~^~~~~~~~~~~~~~
+flecs.c: In function ‘int32_t ecs_count_type(const ecs_world_t*, ecs_type_t)’:
+flecs.c:6596:51: error: taking address of rvalue [-fpermissive]
+ 6596 |     return ecs_count_filter(world, &(ecs_filter_t){
+      |                                                   ^
+ 6597 |         .include = type
+      |         ~~~~~~~~~~~~~~~                            
+ 6598 |     });
+      |     ~                                              
+In file included from flecs.c:2:
+flecs.c: In function ‘int32_t ecs_count_id(const ecs_world_t*, ecs_entity_t)’:
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.h:502:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  502 | ECS_VECTOR_DECL(name, T, elem_count);\
+      | ^~~~~~~~~~~~~~~
+flecs.c:6615:5: note: in expansion of macro ‘ECS_VECTOR_STACK’
+ 6615 |     ECS_VECTOR_STACK(type, ecs_entity_t, &entity, 1);
+      |     ^~~~~~~~~~~~~~~~
+flecs.c:6617:51: error: taking address of rvalue [-fpermissive]
+ 6617 |     return ecs_count_filter(world, &(ecs_filter_t){
+      |                                                   ^
+ 6618 |         .include = type
+      |         ~~~~~~~~~~~~~~~                            
+ 6619 |     });
+      |     ~                                              
+In file included from flecs.c:2:
+flecs.c: In function ‘void new_defer_component_ids(ecs_op_t*, const ecs_entities_t*)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_entity_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:7002:32: note: in expansion of macro ‘ecs_os_malloc’
+ 7002 |         op->components.array = ecs_os_malloc(array_size);
+      |                                ^~~~~~~~~~~~~
+flecs.c: In function ‘bool ecs_defer_bulk_new(ecs_world_t*, ecs_stage_t*, int32_t, const ecs_entities_t*, void**, const ecs_entity_t**)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_entity_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:7224:29: note: in expansion of macro ‘ecs_os_malloc’
+ 7224 |         ecs_entity_t *ids = ecs_os_malloc(count * ECS_SIZEOF(ecs_entity_t));
+      |                             ^~~~~~~~~~~~~
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘void**’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:7239:26: note: in expansion of macro ‘ecs_os_malloc’
+ 7239 |             defer_data = ecs_os_malloc(ECS_SIZEOF(void*) * c_count);
+      |                          ^~~~~~~~~~~~~
+flecs.c: In function ‘ecs_vector_t* resize(ecs_vector_t*, int16_t, int32_t)’:
+flecs.h:2050:54: error: invalid conversion from ‘void*’ to ‘ecs_vector_t*’ [-fpermissive]
+ 2050 | #define ecs_os_realloc(ptr, size) ecs_os_api.realloc_(ptr, size)
+      |                                   ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+      |                                                      |
+      |                                                      void*
+flecs.c:7611:28: note: in expansion of macro ‘ecs_os_realloc’
+ 7611 |     ecs_vector_t *result = ecs_os_realloc(vector, offset + size);
+      |                            ^~~~~~~~~~~~~~
+flecs.c: In function ‘ecs_vector_t* _ecs_vector_new(ecs_size_t, int16_t, int32_t)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_vector_t*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:7626:9: note: in expansion of macro ‘ecs_os_malloc’
+ 7626 |         ecs_os_malloc(offset + elem_size * elem_count);
+      |         ^~~~~~~~~~~~~
+flecs.c: In function ‘ecs_vector_t* _ecs_vector_from_array(ecs_size_t, int16_t, int32_t, void*)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_vector_t*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:7646:9: note: in expansion of macro ‘ecs_os_malloc’
+ 7646 |         ecs_os_malloc(offset + elem_size * elem_count);
+      |         ^~~~~~~~~~~~~
+flecs.c: In function ‘chunk_t* chunk_new(ecs_sparse_t*, int32_t)’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘int32_t*’ {aka ‘int*’} [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:8139:22: note: in expansion of macro ‘ecs_os_calloc’
+ 8139 |     result->sparse = ecs_os_calloc(ECS_SIZEOF(int32_t) * CHUNK_COUNT);
+      |                      ^~~~~~~~~~~~~
+flecs.c: In function ‘ecs_sparse_t* _ecs_sparse_new(ecs_size_t)’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_sparse_t*’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:8389:28: note: in expansion of macro ‘ecs_os_calloc’
+ 8389 |     ecs_sparse_t *result = ecs_os_calloc(ECS_SIZEOF(ecs_sparse_t));
+      |                            ^~~~~~~~~~~~~
+flecs.c: In function ‘void ecs_name_writer_alloc(ecs_name_writer_t*, int32_t)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:8834:24: note: in expansion of macro ‘ecs_os_malloc’
+ 8834 |         writer->name = ecs_os_malloc(writer->len);
+      |                        ^~~~~~~~~~~~~
+flecs.c: In function ‘bool ecs_name_writer_write(ecs_name_writer_t*, const char*)’:
+flecs.h:2816:31: error: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+ 2816 | #define ECS_OFFSET(o, offset) reinterpret_cast<void*>((reinterpret_cast<uintptr_t>(o)) + (static_cast<uintptr_t>(offset)))
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                               |
+      |                               void*
+flecs.c:8846:22: note: in expansion of macro ‘ECS_OFFSET’
+ 8846 |     char *name_ptr = ECS_OFFSET(writer->name, writer->written);
+      |                      ^~~~~~~~~~
+flecs.c: In function ‘void ecs_table_writer_next(ecs_writer_t*)’:
+flecs.c:9046:29: error: invalid conversion from ‘int’ to ‘ecs_blob_header_kind_t’ [-fpermissive]
+ 9046 |             writer->state = 0;
+      |                             ^
+      |                             |
+      |                             int
+In file included from flecs.c:2:
+flecs.c: In function ‘ecs_size_t ecs_table_writer(const char*, ecs_size_t, ecs_writer_t*)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_entity_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:9079:30: note: in expansion of macro ‘ecs_os_malloc’
+ 9079 |         writer->type_array = ecs_os_malloc(writer->type_count * ECS_SIZEOF(ecs_entity_t));
+      |                              ^~~~~~~~~~~~~
+flecs.c: In function ‘int ecs_writer_write(const char*, int32_t, ecs_writer_t*)’:
+flecs.h:2816:31: error: invalid conversion from ‘void*’ to ‘const char*’ [-fpermissive]
+ 2816 | #define ECS_OFFSET(o, offset) reinterpret_cast<void*>((reinterpret_cast<uintptr_t>(o)) + (static_cast<uintptr_t>(offset)))
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                               |
+      |                               void*
+flecs.c:9221:40: note: in expansion of macro ‘ECS_OFFSET’
+ 9221 |             written = ecs_table_writer(ECS_OFFSET(buffer, total_written),
+      |                                        ^~~~~~~~~~
+flecs.c:9062:17: note:   initializing argument 1 of ‘ecs_size_t ecs_table_writer(const char*, ecs_size_t, ecs_writer_t*)’
+ 9062 |     const char *buffer,
+      |     ~~~~~~~~~~~~^~~~~~
+In file included from flecs.c:2:
+flecs.c: In function ‘ecs_entity_t ecs_import_from_library(ecs_world_t*, const char*, const char*)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:9635:23: note: in expansion of macro ‘ecs_os_malloc’
+ 9635 |         import_func = ecs_os_malloc(ecs_os_strlen(library_name) + ECS_SIZEOF("Import"));
+      |                       ^~~~~~~~~~~~~
+flecs.c: In function ‘ecs_queue_t* _ecs_queue_new(ecs_size_t, int16_t, int32_t)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_queue_t*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:9774:27: note: in expansion of macro ‘ecs_os_malloc’
+ 9774 |     ecs_queue_t *result = ecs_os_malloc(ECS_SIZEOF(ecs_queue_t));
+      |                           ^~~~~~~~~~~~~
+flecs.c: In function ‘ecs_queue_t* _ecs_queue_from_array(ecs_size_t, int16_t, int32_t, void*)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_queue_t*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:9788:27: note: in expansion of macro ‘ecs_os_malloc’
+ 9788 |     ecs_queue_t *result = ecs_os_malloc(ECS_SIZEOF(ecs_queue_t));
+      |                           ^~~~~~~~~~~~~
+flecs.c: In function ‘ecs_data_t* duplicate_data(ecs_world_t*, ecs_table_t*, ecs_data_t*)’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_data_t*’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:10370:26: note: in expansion of macro ‘ecs_os_calloc’
+10370 |     ecs_data_t *result = ecs_os_calloc(ECS_SIZEOF(ecs_data_t));
+      |                          ^~~~~~~~~~~~~
+flecs.c:10375:36: error: invalid conversion from ‘void*’ to ‘ecs_column_t*’ [-fpermissive]
+10375 |     result->columns = ecs_os_memdup(
+      |                       ~~~~~~~~~~~~~^
+      |                                    |
+      |                                    void*
+10376 |         main_data->columns, ECS_SIZEOF(ecs_column_t) * column_count);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from flecs.c:2:
+flecs.c: In function ‘ecs_snapshot_t* snapshot_create(ecs_world_t*, const ecs_sparse_t*, ecs_iter_t*, ecs_iter_next_action_t)’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_snapshot_t*’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:10433:30: note: in expansion of macro ‘ecs_os_calloc’
+10433 |     ecs_snapshot_t *result = ecs_os_calloc(ECS_SIZEOF(ecs_snapshot_t));
+      |                              ^~~~~~~~~~~~~
+flecs.c: In function ‘ecs_iter_t ecs_snapshot_iter(ecs_snapshot_t*, const ecs_filter_t*)’:
+flecs.c:10645:23: error: expected primary-expression before ‘)’ token
+10645 |     return (ecs_iter_t){
+      |                       ^
+flecs.c:10645:24: error: expected ‘;’ before ‘{’ token
+10645 |     return (ecs_iter_t){
+      |                        ^
+      |                        ;
+flecs.c:10646:9: error: expected primary-expression before ‘.’ token
+10646 |         .world = snapshot->world,
+      |         ^
+flecs.c:10647:9: error: expected primary-expression before ‘.’ token
+10647 |         .table_count = ecs_vector_count(snapshot->tables),
+      |         ^
+flecs.c:10648:9: error: expected primary-expression before ‘.’ token
+10648 |         .iter.snapshot = iter
+      |         ^
+In file included from flecs.c:2:
+flecs.c: In function ‘ecs_size_t ecs_table_reader(char*, ecs_size_t, ecs_reader_t*)’:
+flecs.c:11023:56: error: taking address of rvalue [-fpermissive]
+11023 |         ecs_os_memcpy(buffer, &(ecs_blob_header_kind_t){EcsTableHeader}, ECS_SIZEOF(EcsTableHeader));
+      |                                                        ^~~~~~~~~~~~~~~~
+flecs.h:2070:53: note: in definition of macro ‘ecs_os_memcpy’
+ 2070 | #define ecs_os_memcpy(ptr1, ptr2, num) memcpy(ptr1, ptr2, static_cast<size_t>(num))
+      |                                                     ^~~~
+flecs.c:11029:41: error: taking address of rvalue [-fpermissive]
+11029 |         ecs_os_memcpy(buffer, &(int32_t){ecs_vector_count(reader->type)}, ECS_SIZEOF(int32_t));
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:2070:53: note: in definition of macro ‘ecs_os_memcpy’
+ 2070 | #define ecs_os_memcpy(ptr1, ptr2, num) memcpy(ptr1, ptr2, static_cast<size_t>(num))
+      |                                                     ^~~~
+flecs.c:11047:41: error: taking address of rvalue [-fpermissive]
+11047 |         ecs_os_memcpy(buffer, &(int32_t){ecs_table_count(reader->table)}, ECS_SIZEOF(int32_t));
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:2070:53: note: in definition of macro ‘ecs_os_memcpy’
+ 2070 | #define ecs_os_memcpy(ptr1, ptr2, num) memcpy(ptr1, ptr2, static_cast<size_t>(num))
+      |                                                     ^~~~
+flecs.c:11053:56: error: taking address of rvalue [-fpermissive]
+11053 |         ecs_os_memcpy(buffer, &(ecs_blob_header_kind_t){EcsTableColumnHeader}, ECS_SIZEOF(ecs_blob_header_kind_t));
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~
+flecs.h:2070:53: note: in definition of macro ‘ecs_os_memcpy’
+ 2070 | #define ecs_os_memcpy(ptr1, ptr2, num) memcpy(ptr1, ptr2, static_cast<size_t>(num))
+      |                                                     ^~~~
+flecs.c:11102:56: error: taking address of rvalue [-fpermissive]
+11102 |         ecs_os_memcpy(buffer, &(ecs_blob_header_kind_t){EcsTableColumnNameHeader}, ECS_SIZEOF(ecs_blob_header_kind_t));
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:2070:53: note: in definition of macro ‘ecs_os_memcpy’
+ 2070 | #define ecs_os_memcpy(ptr1, ptr2, num) memcpy(ptr1, ptr2, static_cast<size_t>(num))
+      |                                                     ^~~~
+flecs.c: In function ‘int32_t ecs_reader_read(char*, int32_t, ecs_reader_t*)’:
+flecs.h:2816:31: error: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+ 2816 | #define ECS_OFFSET(o, offset) reinterpret_cast<void*>((reinterpret_cast<uintptr_t>(o)) + (static_cast<uintptr_t>(offset)))
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                               |
+      |                               void*
+flecs.c:11169:41: note: in expansion of macro ‘ECS_OFFSET’
+11169 |         while ((read = ecs_table_reader(ECS_OFFSET(buffer, total_read), remaining, reader))) {
+      |                                         ^~~~~~~~~~
+flecs.c:11001:11: note:   initializing argument 1 of ‘ecs_size_t ecs_table_reader(char*, ecs_size_t, ecs_reader_t*)’
+11001 |     char *buffer,
+      |     ~~~~~~^~~~~~
+flecs.c: In function ‘ecs_reader_t ecs_reader_init(ecs_world_t*)’:
+flecs.c:11190:65: error: taking address of rvalue [-fpermissive]
+11190 |         .component_iter = ecs_filter_iter(world, &(ecs_filter_t){
+      |                                                                 ^
+11191 |             .include = ecs_type(EcsComponent)
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                    
+11192 |         }),
+      |         ~                                                        
+flecs.c:11196:5: error: designator order for field ‘ecs_reader_t::data_iter’ does not match declaration order in ‘ecs_reader_t’
+11196 |     };
+      |     ^
+flecs.c: In function ‘ecs_reader_t ecs_reader_init_w_iter(ecs_iter_t*, ecs_iter_next_action_t)’:
+flecs.c:11210:65: error: taking address of rvalue [-fpermissive]
+11210 |         .component_iter = ecs_filter_iter(world, &(ecs_filter_t){
+      |                                                                 ^
+11211 |             .include = ecs_type(EcsComponent)
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                    
+11212 |         }),
+      |         ~                                                        
+flecs.c:11216:5: error: designator order for field ‘ecs_reader_t::data_iter’ does not match declaration order in ‘ecs_reader_t’
+11216 |     };
+      |     ^
+In file included from /usr/include/stdlib.h:568,
+                 from /usr/include/c++/10/cstdlib:75,
+                 from /usr/include/c++/10/stdlib.h:36,
+                 from flecs.h:68,
+                 from flecs.c:2:
+flecs.c: In function ‘void ecs_bulk_add_remove_type(ecs_world_t*, ecs_type_t, ecs_type_t, const ecs_filter_t*)’:
+flecs.h:2058:29: error: invalid conversion from ‘void*’ to ‘ecs_entity_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2058 | #define ecs_os_alloca(size) alloca((size_t)(size))
+      |                             ^~~~~~
+      |                             |
+      |                             void*
+flecs.c:11325:18: note: in expansion of macro ‘ecs_os_alloca’
+11325 |         .array = ecs_os_alloca(ECS_SIZEOF(ecs_entity_t) * to_add_array.count),
+      |                  ^~~~~~~~~~~~~
+flecs.h:2058:29: error: invalid conversion from ‘void*’ to ‘ecs_entity_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2058 | #define ecs_os_alloca(size) alloca((size_t)(size))
+      |                             ^~~~~~
+      |                             |
+      |                             void*
+flecs.c:11330:18: note: in expansion of macro ‘ecs_os_alloca’
+11330 |         .array = ecs_os_alloca(ECS_SIZEOF(ecs_entity_t) * to_remove_array.count),
+      |                  ^~~~~~~~~~~~~
+flecs.c: In function ‘void ecs_bulk_add_type(ecs_world_t*, ecs_type_t, const ecs_filter_t*)’:
+flecs.h:2058:29: error: invalid conversion from ‘void*’ to ‘ecs_entity_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2058 | #define ecs_os_alloca(size) alloca((size_t)(size))
+      |                             ^~~~~~
+      |                             |
+      |                             void*
+flecs.c:11381:18: note: in expansion of macro ‘ecs_os_alloca’
+11381 |         .array = ecs_os_alloca(ECS_SIZEOF(ecs_entity_t) * to_add_array.count),
+      |                  ^~~~~~~~~~~~~
+flecs.c: In function ‘void ecs_bulk_remove_type(ecs_world_t*, ecs_type_t, const ecs_filter_t*)’:
+flecs.h:2058:29: error: invalid conversion from ‘void*’ to ‘ecs_entity_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2058 | #define ecs_os_alloca(size) alloca((size_t)(size))
+      |                             ^~~~~~
+      |                             |
+      |                             void*
+flecs.c:11473:18: note: in expansion of macro ‘ecs_os_alloca’
+11473 |         .array = ecs_os_alloca(ECS_SIZEOF(ecs_entity_t) * to_remove_array.count),
+      |                  ^~~~~~~~~~~~~
+In file included from flecs.c:2:
+flecs.c: In function ‘void eval_component_monitor(ecs_world_t*, ecs_component_monitors_t*)’:
+flecs.c:12009:70: error: taking address of rvalue [-fpermissive]
+12009 |                 ecs_query_notify(world, *q_ptr, &(ecs_query_event_t) {
+      |                                                                      ^
+12010 |                     .kind = EcsQueryTableRematch
+      |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                      
+12011 |                 });
+      |                 ~                                                     
+flecs.h:803:13: note: in definition of macro ‘ecs_vector_each’
+  803 |             __VA_ARGS__\
+      |             ^~~~~~~~~~~~
+  804 |         }\
+      |              
+In file included from flecs.c:2:
+flecs.c: In function ‘ecs_world_t* ecs_mini()’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_world_t*’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:12145:26: note: in expansion of macro ‘ecs_os_calloc’
+12145 |     ecs_world_t *world = ecs_os_calloc(sizeof(ecs_world_t));
+      |                          ^~~~~~~~~~~~~
+In file included from flecs.c:2:
+flecs.c: In function ‘ecs_world_t* ecs_init()’:
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.h:502:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  502 | ECS_VECTOR_DECL(name, T, elem_count);\
+      | ^~~~~~~~~~~~~~~
+flecs.h:6469:5: note: in expansion of macro ‘ECS_VECTOR_STACK’
+ 6469 |     ECS_VECTOR_STACK(FLECS__T##id, ecs_entity_t, &FLECS__E##id, 1);\
+      |     ^~~~~~~~~~~~~~~~
+flecs.c:12229:5: note: in expansion of macro ‘ECS_IMPORT’
+12229 |     ECS_IMPORT(world, FlecsPipeline);
+      |     ^~~~~~~~~~
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.h:502:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  502 | ECS_VECTOR_DECL(name, T, elem_count);\
+      | ^~~~~~~~~~~~~~~
+flecs.h:6469:5: note: in expansion of macro ‘ECS_VECTOR_STACK’
+ 6469 |     ECS_VECTOR_STACK(FLECS__T##id, ecs_entity_t, &FLECS__E##id, 1);\
+      |     ^~~~~~~~~~~~~~~~
+flecs.c:12232:5: note: in expansion of macro ‘ECS_IMPORT’
+12232 |     ECS_IMPORT(world, FlecsTimer);
+      |     ^~~~~~~~~~
+flecs.c: In function ‘void ecs_set_component_actions_w_id(ecs_world_t*, ecs_entity_t, EcsComponentLifecycle*)’:
+flecs.c:12373:55: error: taking address of rvalue [-fpermissive]
+12373 |         ecs_notify_tables(world, &(ecs_table_event_t) {
+      |                                                       ^
+12374 |             .kind = EcsTableComponentInfo,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~             
+12375 |             .component = component
+      |             ~~~~~~~~~~~~~~~~~~~~~~                     
+12376 |         });
+      |         ~                                              
+flecs.c: In function ‘void ecs_delete_table(ecs_world_t*, ecs_table_t*)’:
+flecs.c:12978:36: error: taking address of rvalue [-fpermissive]
+12978 |         world, &(ecs_query_event_t){
+      |                                    ^
+12979 |             .kind = EcsQueryTableUnmatch,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+12980 |             .table = table
+      |             ~~~~~~~~~~~~~~          
+12981 |         });
+      |         ~                           
+In file included from flecs.c:2:
+flecs.c: In function ‘ecs_switch_t* ecs_switch_new(uint64_t, uint64_t, int32_t)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_switch_t*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:13060:28: note: in expansion of macro ‘ecs_os_malloc’
+13060 |     ecs_switch_t *result = ecs_os_malloc(ECS_SIZEOF(ecs_switch_t));
+      |                            ^~~~~~~~~~~~~
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_switch_header_t*’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:13065:23: note: in expansion of macro ‘ecs_os_calloc’
+13065 |     result->headers = ecs_os_calloc(ECS_SIZEOF(ecs_switch_header_t) * count);
+      |                       ^~~~~~~~~~~~~
+flecs.c: In function ‘ecs_iter_t ecs_filter_iter(ecs_world_t*, const ecs_filter_t*)’:
+flecs.c:13676:23: error: expected primary-expression before ‘)’ token
+13676 |     return (ecs_iter_t){
+      |                       ^
+flecs.c:13676:24: error: expected ‘;’ before ‘{’ token
+13676 |     return (ecs_iter_t){
+      |                        ^
+      |                        ;
+flecs.c:13677:9: error: expected primary-expression before ‘.’ token
+13677 |         .world = world,
+      |         ^
+flecs.c:13678:9: error: expected primary-expression before ‘.’ token
+13678 |         .iter.filter = iter
+      |         ^
+In file included from flecs.c:2:
+flecs.c: In function ‘void ensure(ecs_bitset_t*, ecs_size_t)’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘uint64_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:13726:20: note: in expansion of macro ‘ecs_os_calloc’
+13726 |         bs->data = ecs_os_calloc(new_size);
+      |                    ^~~~~~~~~~~~~
+flecs.h:2050:54: error: invalid conversion from ‘void*’ to ‘uint64_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2050 | #define ecs_os_realloc(ptr, size) ecs_os_api.realloc_(ptr, size)
+      |                                   ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+      |                                                      |
+      |                                                      void*
+flecs.c:13731:20: note: in expansion of macro ‘ecs_os_realloc’
+13731 |         bs->data = ecs_os_realloc(bs->data, new_size);
+      |                    ^~~~~~~~~~~~~~
+flecs.c: In function ‘void ecs_strbuf_grow(ecs_strbuf_t*)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_strbuf_element_embedded*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:13825:38: note: in expansion of macro ‘ecs_os_malloc’
+13825 |     ecs_strbuf_element_embedded *e = ecs_os_malloc(sizeof(ecs_strbuf_element_embedded));
+      |                                      ^~~~~~~~~~~~~
+flecs.c: In function ‘void ecs_strbuf_grow_str(ecs_strbuf_t*, char*, char*, int32_t)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_strbuf_element_str*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:13845:33: note: in expansion of macro ‘ecs_os_malloc’
+13845 |     ecs_strbuf_element_str *e = ecs_os_malloc(sizeof(ecs_strbuf_element_str));
+      |                                 ^~~~~~~~~~~~~
+flecs.c: In function ‘bool ecs_strbuf_vappend_intern(ecs_strbuf_t*, const char*, __va_list_tag*)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:13997:25: note: in expansion of macro ‘ecs_os_malloc’
+13997 |             char *dst = ecs_os_malloc(memRequired + 1);
+      |                         ^~~~~~~~~~~~~
+flecs.c: In function ‘bool ecs_strbuf_mergebuff(ecs_strbuf_t*, ecs_strbuf_t*)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_strbuf_element*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:14160:45: note: in expansion of macro ‘ecs_os_malloc’
+14160 |                 dst_buffer->current->next = ecs_os_malloc(sizeof(ecs_strbuf_element));
+      |                                             ^~~~~~~~~~~~~
+flecs.c: In function ‘char* ecs_strbuf_get(ecs_strbuf_t*)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:14184:22: note: in expansion of macro ‘ecs_os_malloc’
+14184 |             result = ecs_os_malloc(len);
+      |                      ^~~~~~~~~~~~~
+flecs.c:14197:27: error: invalid conversion from ‘void*’ to ‘ecs_strbuf_element*’ [-fpermissive]
+14197 |             } while ((e = next));
+      |                           ^~~~
+      |                           |
+      |                           void*
+flecs.c: In function ‘void ecs_strbuf_reset(ecs_strbuf_t*)’:
+flecs.c:14219:23: error: invalid conversion from ‘void*’ to ‘ecs_strbuf_element*’ [-fpermissive]
+14219 |         } while ((e = next));
+      |                       ^~~~
+      |                       |
+      |                       void*
+flecs.c: In function ‘int ecs_parse_signature_action(ecs_world_t*, const char*, const char*, int64_t, ecs_sig_from_kind_t, ecs_sig_oper_kind_t, ecs_sig_inout_kind_t, ecs_entity_t, const char*, const char*, const char*, const char*, void*)’:
+flecs.c:14847:22: error: invalid conversion from ‘void*’ to ‘ecs_sig_t*’ [-fpermissive]
+14847 |     ecs_sig_t *sig = data;
+      |                      ^~~~
+      |                      |
+      |                      void*
+flecs.c: At global scope:
+flecs.c:15507:18: error: expected ‘,’ or ‘...’ before ‘xor’ token
+15507 |     ecs_entity_t xor)
+      |                  ^~~
+In file included from flecs.c:2:
+flecs.c: In function ‘ecs_entity_t ecs_type_get_entity_for_xor(ecs_world_t*, ecs_type_t, ecs_entity_t)’:
+flecs.c:15510:49: error: expected primary-expression before ‘xor’ token
+15510 |         ecs_type_owns_id(world, type, ECS_XOR | xor, true),
+      |                                                 ^~~
+flecs.h:2977:17: note: in definition of macro ‘ecs_assert’
+ 2977 |     _ecs_assert(condition, error_code, param, #condition, __FILE__, __LINE__);\
+      |                 ^~~~~~~~~
+flecs.c:15510:52: error: expected primary-expression before ‘,’ token
+15510 |         ecs_type_owns_id(world, type, ECS_XOR | xor, true),
+      |                                                    ^
+flecs.h:2977:17: note: in definition of macro ‘ecs_assert’
+ 2977 |     _ecs_assert(condition, error_code, param, #condition, __FILE__, __LINE__);\
+      |                 ^~~~~~~~~
+In file included from flecs.c:18:
+flecs.c:15510:49: error: expected primary-expression before ‘xor’ token
+15510 |         ecs_type_owns_id(world, type, ECS_XOR | xor, true),
+      |                                                 ^~~
+flecs.c:15509:5: note: in expansion of macro ‘ecs_assert’
+15509 |     ecs_assert(
+      |     ^~~~~~~~~~
+flecs.c:15510:52: error: expected primary-expression before ‘,’ token
+15510 |         ecs_type_owns_id(world, type, ECS_XOR | xor, true),
+      |                                                    ^
+flecs.c:15509:5: note: in expansion of macro ‘ecs_assert’
+15509 |     ecs_assert(
+      |     ^~~~~~~~~~
+In file included from flecs.c:2:
+flecs.c:15513:46: error: expected primary-expression before ‘xor’ token
+15513 |     const EcsType *type_ptr = ecs_get(world, xor, EcsType);
+      |                                              ^~~
+flecs.h:4730:44: note: in definition of macro ‘ecs_get’
+ 4730 |     ((const component*)ecs_get_w_id(world, entity, ecs_id(component)))
+      |                                            ^~~~~~
+flecs.h:4730:50: error: expected primary-expression before ‘,’ token
+ 4730 |     ((const component*)ecs_get_w_id(world, entity, ecs_id(component)))
+      |                                                  ^
+flecs.c:15513:31: note: in expansion of macro ‘ecs_get’
+15513 |     const EcsType *type_ptr = ecs_get(world, xor, EcsType);
+      |                               ^~~~~~~
+In file included from flecs.c:2:
+flecs.c: In function ‘char* ecs_os_api_strdup(const char*)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘char*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:15708:20: note: in expansion of macro ‘ecs_os_malloc’
+15708 |     char *result = ecs_os_malloc(len + 1);
+      |                    ^~~~~~~~~~~~~
+flecs.c: In function ‘int table_compare(const void*, const void*)’:
+flecs.c:15978:42: error: invalid conversion from ‘const void*’ to ‘const ecs_matched_table_t*’ [-fpermissive]
+15978 |     const ecs_matched_table_t *table_1 = t1;
+      |                                          ^~
+      |                                          |
+      |                                          const void*
+flecs.c:15979:42: error: invalid conversion from ‘const void*’ to ‘const ecs_matched_table_t*’ [-fpermissive]
+15979 |     const ecs_matched_table_t *table_2 = t2;
+      |                                          ^~
+      |                                          |
+      |                                          const void*
+In file included from flecs.c:2:
+flecs.c: In function ‘void order_ranked_tables(ecs_world_t*, ecs_query_t*)’:
+flecs.c:16024:85: error: taking address of rvalue [-fpermissive]
+16024 |                 ecs_table_notify(world, table->iter_data.table, &(ecs_table_event_t){
+      |                                                                                     ^
+16025 |                     .kind = EcsTableQueryMatch,
+      |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~                                      
+16026 |                     .query = query,
+      |                     ~~~~~~~~~~~~~~~                                                  
+16027 |                     .matched_table_index = table_i
+      |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                   
+16028 |                 });
+      |                 ~                                                                    
+flecs.h:803:13: note: in definition of macro ‘ecs_vector_each’
+  803 |             __VA_ARGS__\
+      |             ^~~~~~~~~~~~
+  804 |         }\
+      |              
+In file included from flecs.c:2:
+flecs.c: In function ‘void add_table(ecs_world_t*, ecs_query_t*, ecs_table_t*)’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘trait_offset_t*’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:16519:25: note: in expansion of macro ‘ecs_os_calloc’
+16519 |         trait_offsets = ecs_os_calloc(
+      |                         ^~~~~~~~~~~~~
+flecs.c:16531:38: error: expected primary-expression before ‘)’ token
+16531 |     table_data = (ecs_matched_table_t){ .iter_data.table = table };
+      |                                      ^
+In file included from flecs.c:2:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘int32_t*’ {aka ‘int*’} [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:16541:40: note: in expansion of macro ‘ecs_os_malloc’
+16541 |         table_data.iter_data.columns = ecs_os_malloc(ECS_SIZEOF(int32_t) * column_count);
+      |                                        ^~~~~~~~~~~~~
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_entity_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:16546:43: note: in expansion of macro ‘ecs_os_malloc’
+16546 |         table_data.iter_data.components = ecs_os_malloc(ECS_SIZEOF(ecs_entity_t) * column_count);
+      |                                           ^~~~~~~~~~~~~
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘const ecs_vector_t**’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:16550:38: note: in expansion of macro ‘ecs_os_malloc’
+16550 |         table_data.iter_data.types = ecs_os_malloc(ECS_SIZEOF(ecs_type_t) * column_count);
+      |                                      ^~~~~~~~~~~~~
+flecs.h:2050:54: error: invalid conversion from ‘void*’ to ‘int32_t*’ {aka ‘int*’} [-fpermissive]
+ 2050 | #define ecs_os_realloc(ptr, size) ecs_os_api.realloc_(ptr, size)
+      |                                   ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+      |                                                      |
+      |                                                      void*
+flecs.c:16657:25: note: in expansion of macro ‘ecs_os_realloc’
+16657 |         table_indices = ecs_os_realloc(
+      |                         ^~~~~~~~~~~~~~
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_ref_t*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:16683:43: note: in expansion of macro ‘ecs_os_malloc’
+16683 |         table_data.iter_data.references = ecs_os_malloc(ref_size);
+      |                                           ^~~~~~~~~~~~~
+flecs.c:16711:60: error: taking address of rvalue [-fpermissive]
+16711 |         ecs_table_notify(world, table, &(ecs_table_event_t){
+      |                                                            ^
+16712 |             .kind = EcsTableQueryMatch,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~                     
+16713 |             .query = query,
+      |             ~~~~~~~~~~~~~~~                                 
+16714 |             .matched_table_index = matched_table_index
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      
+16715 |         });
+      |         ~                                                   
+In file included from flecs.c:2:
+flecs.c: In function ‘void build_sorted_table_range(ecs_query_t*, int32_t, int32_t)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘sort_helper_t*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:17054:29: note: in expansion of macro ‘ecs_os_malloc’
+17054 |     sort_helper_t *helper = ecs_os_malloc((end - start) * ECS_SIZEOF(sort_helper_t));
+      |                             ^~~~~~~~~~~~~
+flecs.c: In function ‘void rematch_table(ecs_world_t*, ecs_query_t*, ecs_table_t*)’:
+flecs.c:17887:68: error: taking address of rvalue [-fpermissive]
+17887 |                 ecs_table_notify(world, table, &(ecs_table_event_t){
+      |                                                                    ^
+17888 |                     .kind = EcsTableQueryUnmatch,
+      |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                   
+17889 |                     .query = query
+      |                     ~~~~~~~~~~~~~~                                  
+17890 |                 });
+      |                 ~                                                   
+flecs.c:17899:68: error: taking address of rvalue [-fpermissive]
+17899 |                 ecs_table_notify(world, table, &(ecs_table_event_t){
+      |                                                                    ^
+17900 |                     .kind = EcsTableQueryUnmatch,
+      |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                   
+17901 |                     .query = query
+      |                     ~~~~~~~~~~~~~~                                  
+17902 |                 });
+      |                 ~                                                   
+flecs.c:17904:65: error: taking address of rvalue [-fpermissive]
+17904 |             notify_subqueries(world, query, &(ecs_query_event_t){
+      |                                                                 ^
+17905 |                 .kind = EcsQueryTableUnmatch,
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                    
+17906 |                 .table = table
+      |                 ~~~~~~~~~~~~~~                                   
+17907 |             });
+      |             ~                                                    
+In file included from flecs.c:2:
+flecs.c: In function ‘ecs_query_t* ecs_query_new_w_sig_intern(ecs_world_t*, ecs_entity_t, ecs_sig_t*, bool)’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_query_t*’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:18044:27: note: in expansion of macro ‘ecs_os_calloc’
+18044 |     ecs_query_t *result = ecs_os_calloc(sizeof(ecs_query_t));
+      |                           ^~~~~~~~~~~~~
+flecs.c: In function ‘void ecs_query_free(ecs_query_t*)’:
+flecs.c:18154:57: error: taking address of rvalue [-fpermissive]
+18154 |     notify_subqueries(world, query, &(ecs_query_event_t){
+      |                                                         ^
+18155 |         .kind = EcsQueryOrphan
+      |         ~~~~~~~~~~~~~~~~~~~~~~                           
+18156 |     });
+      |     ~                                                    
+In file included from flecs.c:2:
+flecs.c:18160:81: error: taking address of rvalue [-fpermissive]
+18160 |             ecs_table_notify(world, table->iter_data.table, &(ecs_table_event_t){
+      |                                                                                 ^
+18161 |                 .kind = EcsTableQueryUnmatch,
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                    
+18162 |                 .query = query
+      |                 ~~~~~~~~~~~~~~                                                   
+18163 |             });
+      |             ~                                                                    
+flecs.h:803:13: note: in definition of macro ‘ecs_vector_each’
+  803 |             __VA_ARGS__\
+      |             ^~~~~~~~~~~~
+  804 |         }\
+      |              
+flecs.c:18170:81: error: taking address of rvalue [-fpermissive]
+18170 |             ecs_table_notify(world, table->iter_data.table, &(ecs_table_event_t){
+      |                                                                                 ^
+18171 |                 .kind = EcsTableQueryUnmatch,
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                    
+18172 |                 .query = query
+      |                 ~~~~~~~~~~~~~~                                                   
+18173 |             });
+      |             ~                                                                    
+flecs.h:803:13: note: in definition of macro ‘ecs_vector_each’
+  803 |             __VA_ARGS__\
+      |             ^~~~~~~~~~~~
+  804 |         }\
+      |              
+flecs.c: In function ‘ecs_iter_t ecs_query_iter_page(ecs_query_t*, int32_t, int32_t)’:
+flecs.c:18246:23: error: expected primary-expression before ‘)’ token
+18246 |     return (ecs_iter_t){
+      |                       ^
+flecs.c:18246:24: error: expected ‘;’ before ‘{’ token
+18246 |     return (ecs_iter_t){
+      |                        ^
+      |                        ;
+flecs.c:18247:9: error: expected primary-expression before ‘.’ token
+18247 |         .world = world,
+      |         ^
+flecs.c:18248:9: error: expected primary-expression before ‘.’ token
+18248 |         .query = query,
+      |         ^
+flecs.c:18249:9: error: expected primary-expression before ‘.’ token
+18249 |         .column_count = ecs_vector_count(query->sig.columns),
+      |         ^
+flecs.c:18250:9: error: expected primary-expression before ‘.’ token
+18250 |         .table_count = table_count,
+      |         ^
+flecs.c:18251:9: error: expected primary-expression before ‘.’ token
+18251 |         .inactive_table_count = ecs_vector_count(query->empty_tables),
+      |         ^
+flecs.c:18252:9: error: expected primary-expression before ‘.’ token
+18252 |         .iter.query = it
+      |         ^
+flecs.c: In function ‘int sparse_column_next(ecs_table_t*, ecs_matched_table_t*, ecs_vector_t*, ecs_query_iter_t*, ecs_page_cursor_t*)’:
+flecs.c:18447:1: error: jump to label ‘done’
+18447 | done:
+      | ^~~~
+flecs.c:18419:14: note:   from here
+18419 |         goto done;
+      |              ^~~~
+flecs.c:18423:16: note:   crosses initialization of ‘int32_t count’
+18423 |     int32_t i, count = ecs_vector_count(sparse_columns);
+      |                ^~~~~
+In file included from flecs.c:2:
+flecs.c: In function ‘ecs_edge_t* get_edge(ecs_table_t*, ecs_entity_t)’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_edge_t*’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:19058:30: note: in expansion of macro ‘ecs_os_calloc’
+19058 |             node->lo_edges = ecs_os_calloc(sizeof(ecs_edge_t) * ECS_HI_COMPONENT_ID);
+      |                              ^~~~~~~~~~~~~
+flecs.c: In function ‘void init_edges(ecs_world_t*, ecs_table_t*)’:
+flecs.c:19151:56: error: taking address of rvalue [-fpermissive]
+19151 |     ecs_table_notify(world, table, &(ecs_table_event_t){
+      |                                                        ^
+19152 |         .kind = EcsTableComponentInfo
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                   
+19153 |     });
+      |     ~                                                   
+flecs.c: In function ‘ecs_table_t* create_table(ecs_world_t*, ecs_entities_t*, uint64_t)’:
+flecs.c:19215:52: error: taking address of rvalue [-fpermissive]
+19215 |     ecs_notify_queries(world, &(ecs_query_event_t) {
+      |                                                    ^
+19216 |         .kind = EcsQueryTableMatch,
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~                 
+19217 |         .table = result
+      |         ~~~~~~~~~~~~~~~                             
+19218 |     });
+      |     ~                                               
+In file included from /usr/include/stdlib.h:568,
+                 from /usr/include/c++/10/cstdlib:75,
+                 from /usr/include/c++/10/stdlib.h:36,
+                 from flecs.h:68,
+                 from flecs.c:2:
+flecs.c: In function ‘ecs_table_t* find_or_create_table_include(ecs_world_t*, ecs_table_t*, ecs_entity_t)’:
+flecs.h:2058:29: error: invalid conversion from ‘void*’ to ‘ecs_entity_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2058 | #define ecs_os_alloca(size) alloca((size_t)(size))
+      |                             ^~~~~~
+      |                             |
+      |                             void*
+flecs.c:19407:22: note: in expansion of macro ‘ecs_os_alloca’
+19407 |             .array = ecs_os_alloca(ECS_SIZEOF(ecs_entity_t) * (count + 1)),
+      |                      ^~~~~~~~~~~~~
+flecs.c: In function ‘ecs_table_t* find_or_create_table_exclude(ecs_world_t*, ecs_table_t*, ecs_entity_t)’:
+flecs.h:2058:29: error: invalid conversion from ‘void*’ to ‘ecs_entity_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2058 | #define ecs_os_alloca(size) alloca((size_t)(size))
+      |                             ^~~~~~
+      |                             |
+      |                             void*
+flecs.c:19440:18: note: in expansion of macro ‘ecs_os_alloca’
+19440 |         .array = ecs_os_alloca(ECS_SIZEOF(ecs_entity_t) * count),
+      |                  ^~~~~~~~~~~~~
+flecs.c: In function ‘ecs_table_t* find_or_create(ecs_world_t*, ecs_entities_t*)’:
+flecs.h:2058:29: error: invalid conversion from ‘void*’ to ‘ecs_entity_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2058 | #define ecs_os_alloca(size) alloca((size_t)(size))
+      |                             ^~~~~~
+      |                             |
+      |                             void*
+flecs.c:19741:19: note: in expansion of macro ‘ecs_os_alloca’
+19741 |         ordered = ecs_os_alloca(size);
+      |                   ^~~~~~~~~~~~~
+In file included from flecs.c:2:
+flecs.c: In function ‘void ensure_buckets(ecs_map_t*, int32_t)’:
+flecs.h:2050:54: error: invalid conversion from ‘void*’ to ‘ecs_bucket_t*’ [-fpermissive]
+ 2050 | #define ecs_os_realloc(ptr, size) ecs_os_api.realloc_(ptr, size)
+      |                                   ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+      |                                                      |
+      |                                                      void*
+flecs.c:19954:24: note: in expansion of macro ‘ecs_os_realloc’
+19954 |         map->buckets = ecs_os_realloc(map->buckets, new_count * ECS_SIZEOF(ecs_bucket_t));
+      |                        ^~~~~~~~~~~~~~
+flecs.c: In function ‘int32_t add_to_bucket(ecs_bucket_t*, ecs_size_t, ecs_map_key_t, const void*)’:
+flecs.h:2050:54: error: invalid conversion from ‘void*’ to ‘ecs_map_key_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2050 | #define ecs_os_realloc(ptr, size) ecs_os_api.realloc_(ptr, size)
+      |                                   ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+      |                                                      |
+      |                                                      void*
+flecs.c:20016:20: note: in expansion of macro ‘ecs_os_realloc’
+20016 |     bucket->keys = ecs_os_realloc(bucket->keys, KEY_SIZE * bucket_count);
+      |                    ^~~~~~~~~~~~~~
+flecs.c: In function ‘void remove_from_bucket(ecs_bucket_t*, ecs_size_t, ecs_map_key_t, int32_t)’:
+flecs.h:2816:31: error: invalid conversion from ‘void*’ to ‘ecs_map_key_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2816 | #define ECS_OFFSET(o, offset) reinterpret_cast<void*>((reinterpret_cast<uintptr_t>(o)) + (static_cast<uintptr_t>(offset)))
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                               |
+      |                               void*
+flecs.c:19893:5: note: in expansion of macro ‘ECS_OFFSET’
+19893 |     ECS_OFFSET(array, (elem_size) * (index))
+      |     ^~~~~~~~~~
+flecs.c:20047:31: note: in expansion of macro ‘GET_ELEM’
+20047 |         ecs_map_key_t *elem = GET_ELEM(bucket->payload, elem_size, index);
+      |                               ^~~~~~~~
+flecs.h:2816:31: error: invalid conversion from ‘void*’ to ‘ecs_map_key_t*’ {aka ‘long unsigned int*’} [-fpermissive]
+ 2816 | #define ECS_OFFSET(o, offset) reinterpret_cast<void*>((reinterpret_cast<uintptr_t>(o)) + (static_cast<uintptr_t>(offset)))
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                               |
+      |                               void*
+flecs.c:19893:5: note: in expansion of macro ‘ECS_OFFSET’
+19893 |     ECS_OFFSET(array, (elem_size) * (index))
+      |     ^~~~~~~~~~
+flecs.c:20048:36: note: in expansion of macro ‘GET_ELEM’
+20048 |         ecs_map_key_t *last_elem = GET_ELEM(bucket->payload, elem_size, bucket->count);
+      |                                    ^~~~~~~~
+flecs.c: In function ‘ecs_map_t* _ecs_map_new(ecs_size_t, ecs_size_t, int32_t)’:
+flecs.h:2053:47: error: invalid conversion from ‘void*’ to ‘ecs_map_t*’ [-fpermissive]
+ 2053 | #define ecs_os_calloc(size) ecs_os_api.calloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:20129:25: note: in expansion of macro ‘ecs_os_calloc’
+20129 |     ecs_map_t *result = ecs_os_calloc(ECS_SIZEOF(ecs_map_t) * 1);
+      |                         ^~~~~~~~~~~~~
+flecs.c: In function ‘void* ecs_iter_column_w_size(const ecs_iter_t*, size_t, int32_t)’:
+flecs.c:20614:33: error: invalid conversion from ‘void*’ to ‘ecs_column_t*’ [-fpermissive]
+20614 |     ecs_column_t *columns = it->table_columns;
+      |                             ~~~~^~~~~~~~~~~~~
+      |                                 |
+      |                                 void*
+flecs.c: In function ‘size_t ecs_iter_column_size(const ecs_iter_t*, int32_t)’:
+flecs.c:20637:33: error: invalid conversion from ‘void*’ to ‘ecs_column_t*’ [-fpermissive]
+20637 |     ecs_column_t *columns = it->table_columns;
+      |                             ~~~~^~~~~~~~~~~~~
+      |                                 |
+      |                                 void*
+flecs.c: In function ‘void* worker(void*)’:
+flecs.c:20945:26: error: invalid conversion from ‘void*’ to ‘ecs_stage_t*’ [-fpermissive]
+20945 |     ecs_stage_t *stage = arg;
+      |                          ^~~
+      |                          |
+      |                          void*
+In file included from flecs.c:2:
+flecs.c: At global scope:
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.c:637:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  637 | ECS_VECTOR_DECL(FLECS__T##component, ecs_entity_t, 1)
+      | ^~~~~~~~~~~~~~~
+flecs.c:21260:1: note: in expansion of macro ‘ECS_TYPE_DECL’
+21260 | ECS_TYPE_DECL(EcsPipelineQuery);
+      | ^~~~~~~~~~~~~
+flecs.c: In function ‘void FlecsPipelineImport(ecs_world_t*)’:
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.h:502:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  502 | ECS_VECTOR_DECL(name, T, elem_count);\
+      | ^~~~~~~~~~~~~~~
+flecs.h:6443:5: note: in expansion of macro ‘ECS_VECTOR_STACK’
+ 6443 |     ECS_VECTOR_STACK(FLECS__T##id, ecs_entity_t, &FLECS__E##id, 1);\
+      |     ^~~~~~~~~~~~~~~~
+flecs.c:21902:5: note: in expansion of macro ‘ECS_MODULE’
+21902 |     ECS_MODULE(world, FlecsPipeline);
+      |     ^~~~~~~~~~
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.h:502:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  502 | ECS_VECTOR_DECL(name, T, elem_count);\
+      | ^~~~~~~~~~~~~~~
+flecs.h:6469:5: note: in expansion of macro ‘ECS_VECTOR_STACK’
+ 6469 |     ECS_VECTOR_STACK(FLECS__T##id, ecs_entity_t, &FLECS__E##id, 1);\
+      |     ^~~~~~~~~~~~~~~~
+flecs.c:21904:5: note: in expansion of macro ‘ECS_IMPORT’
+21904 |     ECS_IMPORT(world, FlecsSystem);
+      |     ^~~~~~~~~~
+In file included from flecs.c:2:
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:21908:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+21908 |     ecs_bootstrap_tag(world, EcsPipeline);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:21913:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+21913 |     ecs_bootstrap_tag(world, EcsPreFrame);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:21914:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+21914 |     ecs_bootstrap_tag(world, EcsOnLoad);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:21915:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+21915 |     ecs_bootstrap_tag(world, EcsPostLoad);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:21916:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+21916 |     ecs_bootstrap_tag(world, EcsPreUpdate);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:21917:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+21917 |     ecs_bootstrap_tag(world, EcsOnUpdate);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:21918:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+21918 |     ecs_bootstrap_tag(world, EcsOnValidate);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:21919:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+21919 |     ecs_bootstrap_tag(world, EcsPostUpdate);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:21920:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+21920 |     ecs_bootstrap_tag(world, EcsPreStore);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:21921:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+21921 |     ecs_bootstrap_tag(world, EcsOnStore);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:21922:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+21922 |     ecs_bootstrap_tag(world, EcsPostFrame);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:21927:69: error: taking address of rvalue [-fpermissive]
+21927 |     ecs_set(world, ecs_id(EcsPipelineQuery), EcsComponentLifecycle, {
+      |                                                                     ^
+21928 |         .ctor = ecs_ctor(EcsPipelineQuery),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                          
+21929 |         .dtor = ecs_dtor(EcsPipelineQuery)
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                           
+21930 |     });
+      |     ~                                                                
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c: In function ‘void AddTickSource(ecs_iter_t*)’:
+flecs.c:21956:60: error: taking address of rvalue [-fpermissive]
+21956 |         ecs_set(it->world, it->entities[i], EcsTickSource, {0});
+      |                                                            ^~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c: In function ‘ecs_entity_t ecs_set_timeout(ecs_world_t*, ecs_entity_t, float)’:
+flecs.c:22059:5: error: designator order for field ‘EcsTimer::active’ does not match declaration order in ‘EcsTimer’
+22059 |     });
+      |     ^
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:22055:45: error: taking address of rvalue [-fpermissive]
+22055 |     timer = ecs_set(world, timer, EcsTimer, {
+      |                                             ^
+22056 |         .timeout = timeout,
+      |         ~~~~~~~~~~~~~~~~~~~                  
+22057 |         .single_shot = true,
+      |         ~~~~~~~~~~~~~~~~~~~~                 
+22058 |         .active = true
+      |         ~~~~~~~~~~~~~~                       
+22059 |     });
+      |     ~                                        
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c: In function ‘ecs_entity_t ecs_set_interval(ecs_world_t*, ecs_entity_t, float)’:
+flecs.c:22091:45: error: taking address of rvalue [-fpermissive]
+22091 |     timer = ecs_set(world, timer, EcsTimer, {
+      |                                             ^
+22092 |         .timeout = interval,
+      |         ~~~~~~~~~~~~~~~~~~~~                 
+22093 |         .active = true
+      |         ~~~~~~~~~~~~~~                       
+22094 |     });
+      |     ~                                        
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c: In function ‘ecs_entity_t ecs_set_rate(ecs_world_t*, ecs_entity_t, int32_t, ecs_entity_t)’:
+flecs.c:22154:5: error: designator order for field ‘EcsRateFilter::src’ does not match declaration order in ‘EcsRateFilter’
+22154 |     });
+      |     ^
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:22151:52: error: taking address of rvalue [-fpermissive]
+22151 |     filter = ecs_set(world, filter, EcsRateFilter, {
+      |                                                    ^
+22152 |         .rate = rate,
+      |         ~~~~~~~~~~~~~                               
+22153 |         .src = source
+      |         ~~~~~~~~~~~~~                               
+22154 |     });
+      |     ~                                               
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+In file included from flecs.c:2:
+flecs.c: In function ‘void FlecsTimerImport(ecs_world_t*)’:
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.h:502:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  502 | ECS_VECTOR_DECL(name, T, elem_count);\
+      | ^~~~~~~~~~~~~~~
+flecs.h:6443:5: note: in expansion of macro ‘ECS_VECTOR_STACK’
+ 6443 |     ECS_VECTOR_STACK(FLECS__T##id, ecs_entity_t, &FLECS__E##id, 1);\
+      |     ^~~~~~~~~~~~~~~~
+flecs.c:22192:5: note: in expansion of macro ‘ECS_MODULE’
+22192 |     ECS_MODULE(world, FlecsTimer);
+      |     ^~~~~~~~~~
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.h:502:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  502 | ECS_VECTOR_DECL(name, T, elem_count);\
+      | ^~~~~~~~~~~~~~~
+flecs.h:6469:5: note: in expansion of macro ‘ECS_VECTOR_STACK’
+ 6469 |     ECS_VECTOR_STACK(FLECS__T##id, ecs_entity_t, &FLECS__E##id, 1);\
+      |     ^~~~~~~~~~~~~~~~
+flecs.c:22194:5: note: in expansion of macro ‘ECS_IMPORT’
+22194 |     ECS_IMPORT(world, FlecsPipeline);
+      |     ^~~~~~~~~~
+flecs.c: At global scope:
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.c:637:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  637 | ECS_VECTOR_DECL(FLECS__T##component, ecs_entity_t, 1)
+      | ^~~~~~~~~~~~~~~
+flecs.c:22220:1: note: in expansion of macro ‘ECS_TYPE_DECL’
+22220 | ECS_TYPE_DECL(EcsComponentLifecycle);
+      | ^~~~~~~~~~~~~
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.c:637:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  637 | ECS_VECTOR_DECL(FLECS__T##component, ecs_entity_t, 1)
+      | ^~~~~~~~~~~~~~~
+flecs.c:22221:1: note: in expansion of macro ‘ECS_TYPE_DECL’
+22221 | ECS_TYPE_DECL(EcsTrigger);
+      | ^~~~~~~~~~~~~
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.c:637:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  637 | ECS_VECTOR_DECL(FLECS__T##component, ecs_entity_t, 1)
+      | ^~~~~~~~~~~~~~~
+flecs.c:22222:1: note: in expansion of macro ‘ECS_TYPE_DECL’
+22222 | ECS_TYPE_DECL(EcsSystem);
+      | ^~~~~~~~~~~~~
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.c:637:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  637 | ECS_VECTOR_DECL(FLECS__T##component, ecs_entity_t, 1)
+      | ^~~~~~~~~~~~~~~
+flecs.c:22223:1: note: in expansion of macro ‘ECS_TYPE_DECL’
+22223 | ECS_TYPE_DECL(EcsTickSource);
+      | ^~~~~~~~~~~~~
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.c:637:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  637 | ECS_VECTOR_DECL(FLECS__T##component, ecs_entity_t, 1)
+      | ^~~~~~~~~~~~~~~
+flecs.c:22224:1: note: in expansion of macro ‘ECS_TYPE_DECL’
+22224 | ECS_TYPE_DECL(EcsSignatureExpr);
+      | ^~~~~~~~~~~~~
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.c:637:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  637 | ECS_VECTOR_DECL(FLECS__T##component, ecs_entity_t, 1)
+      | ^~~~~~~~~~~~~~~
+flecs.c:22225:1: note: in expansion of macro ‘ECS_TYPE_DECL’
+22225 | ECS_TYPE_DECL(EcsSignature);
+      | ^~~~~~~~~~~~~
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.c:637:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  637 | ECS_VECTOR_DECL(FLECS__T##component, ecs_entity_t, 1)
+      | ^~~~~~~~~~~~~~~
+flecs.c:22226:1: note: in expansion of macro ‘ECS_TYPE_DECL’
+22226 | ECS_TYPE_DECL(EcsQuery);
+      | ^~~~~~~~~~~~~
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.c:637:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  637 | ECS_VECTOR_DECL(FLECS__T##component, ecs_entity_t, 1)
+      | ^~~~~~~~~~~~~~~
+flecs.c:22227:1: note: in expansion of macro ‘ECS_TYPE_DECL’
+22227 | ECS_TYPE_DECL(EcsIterAction);
+      | ^~~~~~~~~~~~~
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.c:637:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  637 | ECS_VECTOR_DECL(FLECS__T##component, ecs_entity_t, 1)
+      | ^~~~~~~~~~~~~~~
+flecs.c:22228:1: note: in expansion of macro ‘ECS_TYPE_DECL’
+22228 | ECS_TYPE_DECL(EcsContext);
+      | ^~~~~~~~~~~~~
+In file included from flecs.c:2:
+flecs.c: In function ‘void register_out_columns(ecs_world_t*, ecs_entity_t, EcsSystem*)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_on_demand_out_t*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:22321:42: note: in expansion of macro ‘ecs_os_malloc’
+22321 |                 system_data->on_demand = ecs_os_malloc(sizeof(ecs_on_demand_out_t));
+      |                                          ^~~~~~~~~~~~~
+flecs.c: In function ‘void ecs_colsystem_dtor(ecs_world_t*, ecs_entity_t, const ecs_entity_t*, void*, size_t, int32_t, void*)’:
+flecs.c:22786:30: error: invalid conversion from ‘void*’ to ‘EcsSystem*’ [-fpermissive]
+22786 |     EcsSystem *system_data = ptr;
+      |                              ^~~
+      |                              |
+      |                              void*
+flecs.c:22795:44: error: invalid conversion from ‘void*’ to ‘const EcsSystem*’ [-fpermissive]
+22795 |             invoke_status_action(world, e, ptr, EcsSystemDeactivated);
+      |                                            ^~~
+      |                                            |
+      |                                            void*
+flecs.c:22359:22: note:   initializing argument 3 of ‘void invoke_status_action(ecs_world_t*, ecs_entity_t, const EcsSystem*, ecs_system_status_t)’
+22359 |     const EcsSystem *system_data,
+      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+flecs.c:22802:44: error: invalid conversion from ‘void*’ to ‘const EcsSystem*’ [-fpermissive]
+22802 |             invoke_status_action(world, e, ptr, EcsSystemDisabled);
+      |                                            ^~~
+      |                                            |
+      |                                            void*
+flecs.c:22359:22: note:   initializing argument 3 of ‘void invoke_status_action(ecs_world_t*, ecs_entity_t, const EcsSystem*, ecs_system_status_t)’
+22359 |     const EcsSystem *system_data,
+      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+flecs.c: In function ‘void trigger_set(ecs_world_t*, const ecs_entity_t*, EcsTrigger*, int32_t)’:
+flecs.c:22856:55: error: taking address of rvalue [-fpermissive]
+22856 |         ecs_notify_tables(world, &(ecs_table_event_t) {
+      |                                                       ^
+22857 |             .kind = EcsTableComponentInfo,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~             
+22858 |             .component = c
+      |             ~~~~~~~~~~~~~~                             
+22859 |         });
+      |         ~                                              
+In file included from flecs.c:2:
+flecs.c: In function ‘void bootstrap_set_system(ecs_world_t*, const char*, const char*, ecs_iter_action_t)’:
+flecs.c:23018:51: error: taking address of rvalue [-fpermissive]
+23018 |     ecs_entity_t sys = ecs_set(world, 0, EcsName, {.value = name});
+      |                                                   ^~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c: In function ‘ecs_entity_t ecs_new_system(ecs_world_t*, ecs_entity_t, const char*, ecs_entity_t, const char*, ecs_iter_action_t)’:
+flecs.c:23069:43: error: taking address of rvalue [-fpermissive]
+23069 |     ecs_set(world, result, EcsIterAction, {action});
+      |                                           ^~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+In file included from flecs.c:2:
+flecs.c: In function ‘void FlecsSystemImport(ecs_world_t*)’:
+flecs.h:494:5: error: expected primary-expression before ‘.’ token
+  494 |     .header.vector = ECS_VECTOR_VALUE(T, elem_count)\
+      |     ^
+flecs.h:502:1: note: in expansion of macro ‘ECS_VECTOR_DECL’
+  502 | ECS_VECTOR_DECL(name, T, elem_count);\
+      | ^~~~~~~~~~~~~~~
+flecs.h:6443:5: note: in expansion of macro ‘ECS_VECTOR_STACK’
+ 6443 |     ECS_VECTOR_STACK(FLECS__T##id, ecs_entity_t, &FLECS__E##id, 1);\
+      |     ^~~~~~~~~~~~~~~~
+flecs.c:23121:5: note: in expansion of macro ‘ECS_MODULE’
+23121 |     ECS_MODULE(world, FlecsSystem);
+      |     ^~~~~~~~~~
+In file included from flecs.c:2:
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:23135:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+23135 |     ecs_bootstrap_tag(world, EcsOnAdd);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:23136:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+23136 |     ecs_bootstrap_tag(world, EcsOnRemove);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:23137:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+23137 |     ecs_bootstrap_tag(world, EcsOnSet);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:23138:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+23138 |     ecs_bootstrap_tag(world, EcsUnSet);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:23143:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+23143 |     ecs_bootstrap_tag(world, EcsDisabledIntern);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:23144:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+23144 |     ecs_bootstrap_tag(world, EcsInactive);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:23145:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+23145 |     ecs_bootstrap_tag(world, EcsOnDemand);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:23146:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+23146 |     ecs_bootstrap_tag(world, EcsMonitor);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:23161:34: error: taking address of rvalue [-fpermissive]
+23161 |         &(EcsComponentLifecycle) {
+      |                                  ^
+23162 |             .ctor = sys_ctor_init_zero,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+23163 |             .dtor = ecs_colsystem_dtor
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~
+23164 |         });
+      |         ~                         
+flecs.c: In function ‘int parse_type_action(ecs_world_t*, const char*, const char*, int64_t, ecs_sig_from_kind_t, ecs_sig_oper_kind_t, ecs_sig_inout_kind_t, ecs_entity_t, const char*, const char*, const char*, const char*, void*)’:
+flecs.c:23296:28: error: invalid conversion from ‘void*’ to ‘ecs_vector_t**’ [-fpermissive]
+23296 |     ecs_vector_t **array = data;
+      |                            ^~~~
+      |                            |
+      |                            void*
+flecs.c: In function ‘const ecs_vector_t* ecs_bootstrap_type(ecs_world_t*, ecs_entity_t)’:
+flecs.c:23815:34: error: taking address of temporary array
+23815 |         .array = (ecs_entity_t[]){entity},
+      |                                  ^~~~~~~~
+In file included from flecs.c:2:
+flecs.c: In function ‘ecs_table_t* bootstrap_component_table(ecs_world_t*)’:
+flecs.h:2044:47: error: invalid conversion from ‘void*’ to ‘ecs_column_t*’ [-fpermissive]
+ 2044 | #define ecs_os_malloc(size) ecs_os_api.malloc_(size)
+      |                             ~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                               |
+      |                                               void*
+flecs.c:23858:21: note: in expansion of macro ‘ecs_os_malloc’
+23858 |     data->columns = ecs_os_malloc(sizeof(ecs_column_t) * 2);
+      |                     ^~~~~~~~~~~~~
+In file included from flecs.c:2:
+flecs.c: In function ‘void bootstrap_entity(ecs_world_t*, ecs_entity_t, const char*, ecs_entity_t)’:
+flecs.c:23880:33: error: taking address of rvalue [-fpermissive]
+23880 |     ecs_set(world, id, EcsName, {.value = name});
+      |                                 ^~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c: In function ‘void ecs_bootstrap(ecs_world_t*)’:
+flecs.c:23902:47: error: taking address of rvalue [-fpermissive]
+23902 |     ecs_set_component_actions(world, EcsName, {
+      |                                               ^
+23903 |         .ctor = ecs_ctor(EcsName),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~             
+23904 |         .dtor = ecs_dtor(EcsName),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~             
+23905 |         .copy = ecs_copy(EcsName),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~             
+23906 |         .move = ecs_move(EcsName)
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~              
+23907 |     });
+      |     ~                                          
+flecs.h:3990:86: note: in definition of macro ‘ecs_set_component_actions’
+ 3990 |     ecs_set_component_actions_w_id(world, ecs_id(component), &(EcsComponentLifecycle)__VA_ARGS__)
+      |                                                                                      ^~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:23918:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+23918 |     ecs_bootstrap_tag(world, EcsModule);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:23919:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+23919 |     ecs_bootstrap_tag(world, EcsPrefab);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:23920:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+23920 |     ecs_bootstrap_tag(world, EcsHidden);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:654:35: error: taking address of rvalue [-fpermissive]
+  654 |     ecs_set(world, name, EcsName, {.value = &#name[ecs_os_strlen("Ecs")], .symbol = (char*)#name});\
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:23921:5: note: in expansion of macro ‘ecs_bootstrap_tag’
+23921 |     ecs_bootstrap_tag(world, EcsDisabled);
+      |     ^~~~~~~~~~~~~~~~~
+flecs.c:23924:39: error: taking address of rvalue [-fpermissive]
+23924 |     ecs_set(world, EcsFlecs, EcsName, {.value = "flecs"});
+      |                                       ^~~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c:23926:43: error: taking address of rvalue [-fpermissive]
+23926 |     ecs_set(world, EcsFlecsCore, EcsName, {.value = "core"});
+      |                                           ^~~~~~~~~~~~~~~~~
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
+flecs.c: In function ‘ecs_iter_t ecs_scope_iter(ecs_world_t*, ecs_entity_t)’:
+flecs.c:24389:23: error: expected primary-expression before ‘)’ token
+24389 |     return (ecs_iter_t) {
+      |                       ^
+flecs.c:24389:24: error: expected ‘;’ before ‘{’ token
+24389 |     return (ecs_iter_t) {
+      |                        ^~
+      |                        ;
+flecs.c:24390:9: error: expected primary-expression before ‘.’ token
+24390 |         .world = iter_world,
+      |         ^
+flecs.c:24391:9: error: expected primary-expression before ‘.’ token
+24391 |         .iter.parent = iter
+      |         ^
+flecs.c: In function ‘ecs_iter_t ecs_scope_iter_w_filter(ecs_world_t*, ecs_entity_t, ecs_filter_t*)’:
+flecs.c:24409:23: error: expected primary-expression before ‘)’ token
+24409 |     return (ecs_iter_t) {
+      |                       ^
+flecs.c:24409:24: error: expected ‘;’ before ‘{’ token
+24409 |     return (ecs_iter_t) {
+      |                        ^~
+      |                        ;
+flecs.c:24410:9: error: expected primary-expression before ‘.’ token
+24410 |         .world = iter_world,
+      |         ^
+flecs.c:24411:9: error: expected primary-expression before ‘.’ token
+24411 |         .iter.parent = iter,
+      |         ^
+flecs.c:24412:9: error: expected primary-expression before ‘.’ token
+24412 |         .table_count = ecs_vector_count(iter.tables)
+      |         ^
+In file included from flecs.c:2:
+flecs.c: In function ‘ecs_entity_t ecs_add_path_w_sep(ecs_world_t*, ecs_entity_t, ecs_entity_t, const char*, const char*, const char*)’:
+flecs.c:24514:40: error: taking address of rvalue [-fpermissive]
+24514 |             ecs_set(world, e, EcsName, {
+      |                                        ^
+24515 |                 .value = name,
+      |                 ~~~~~~~~~~~~~~          
+24516 |                 .alloc_value = name
+      |                 ~~~~~~~~~~~~~~~~~~~     
+24517 |             });
+      |             ~                           
+flecs.h:4894:87: note: in definition of macro ‘ecs_set’
+ 4894 |     ecs_set_ptr_w_id(world, entity, ecs_id(component), sizeof(component), &(component)__VA_ARGS__)
+      |                                                                                       ^~~~~~~~~~~
